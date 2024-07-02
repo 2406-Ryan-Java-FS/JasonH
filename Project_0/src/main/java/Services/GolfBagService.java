@@ -12,7 +12,7 @@ public interface GolfBagService {
 
     public GolfBag addClub(GolfBag c);
 
-//    public GolfBag updateClub(GolfBag update);
+    public GolfBag updateClub(GolfBag update);
 
     public GolfBag removeClub(int id);
 }

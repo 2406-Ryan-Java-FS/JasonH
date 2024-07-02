@@ -29,6 +29,11 @@ public class GolfBagServiceImpl implements GolfBagService {
     }
 
     @Override
+    public GolfBag updateClub(GolfBag update){
+        return gbr.updateClub(update);
+    }
+
+    @Override
     public GolfBag removeClub(int id) {
         return gbr.removeClub(id);
     }

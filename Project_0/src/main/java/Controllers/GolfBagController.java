@@ -33,6 +33,14 @@ public class GolfBagController{
         context.result(gson.toJson(gb));
     };
 
+    public Handler UDClub = (context) -> {
+        int id = Integer.parseInt(context.pathParam("id"));
+        GolfBag gb = gson.fromJson(context.body(), GolfBag.class);
+        gb.setId(id); // Ensure the ID is set from the path parameter
+        gb = gbs.updateClub(gb);
+        context.result(gson.toJson(gb));
+    };
+
     public Handler delClub = (context) -> {
         int id = Integer.parseInt(context.pathParam("id"));
         GolfBag g = gbs.removeClub(id);

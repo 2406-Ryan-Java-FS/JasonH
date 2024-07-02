@@ -75,29 +75,29 @@ public class GolfBagRepoImpl implements GolfBagRepo {
         return null;
     }
 
-//    @Override
-//    public GolfBag updateClub(GolfBag update) {
-//        try{
-//            String sql = "update golfclubs set brand=?, club_type=?, yardage=?, confidence=? where club_id=? returning *";
-//            PreparedStatement ps = conn.prepareStatement(sql);
-//
-//
-//            ps.setString(1,update.getBrand());
-//            ps.setString(2,update.getClubType());
-//            ps.setInt(3,update.getYardage());
-//            ps.setInt(4,update.getConfidence());
-//            ps.setInt(5,update.getId());
-//
-//            ResultSet rs = ps.executeQuery();
-//
-//            if(rs.next()){
-//                return buildGolfBag(rs);
-//            }
-//        } catch (SQLException e) {
-//            e.printStackTrace();
-//        }
-//        return null;
-//    }
+    @Override
+    public GolfBag updateClub(GolfBag update) {
+        try{
+            String sql = "update golfclubs set brand=?, club_type=?, yardage=?, confidence=? where club_id=? returning *";
+            PreparedStatement ps = conn.prepareStatement(sql);
+
+
+            ps.setString(1,update.getBrand());
+            ps.setString(2,update.getClubType());
+            ps.setInt(3,update.getYardage());
+            ps.setInt(4,update.getConfidence());
+            ps.setInt(5,update.getId());
+
+            ResultSet rs = ps.executeQuery();
+
+            if(rs.next()){
+                return buildGolfBag(rs);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
 
     @Override
     public GolfBag removeClub(int id) {

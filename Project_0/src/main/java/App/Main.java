@@ -35,6 +35,7 @@ public class Main {
         app.get("/golfbag/{id}", gc.getClubById);
         app.get("/golfbag", gc.getAllClubs);
         app.post("/golfbag", gc.mkClub);
+        app.put("/golfbag/{id}", gc.UDClub);
         app.delete("/golfbag/{id}",gc.delClub);
     }
 }
