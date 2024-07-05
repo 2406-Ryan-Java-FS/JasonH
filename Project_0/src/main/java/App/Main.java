@@ -12,14 +12,6 @@ import static io.javalin.apibuilder.ApiBuilder.*;
 
 public class Main {
     public static void main(String[] args) {
-//        Javalin app = Javalin.create(config -> {
-//            // Configure CORS manually
-//            config.plugins.enableCors(cors -> {
-//                cors.add(it -> {
-//                    it.anyHost();
-//                });
-//            });
-//        });
         Javalin app = Javalin.create(JavalinConfig::enableCorsForAllOrigins);
 
 
